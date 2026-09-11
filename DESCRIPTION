@@ -36,3 +36,5 @@ Imports:
     table1,
     tidyr,
     tmap
+Suggests:
+    testthat
