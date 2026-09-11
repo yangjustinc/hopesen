@@ -1,11 +1,12 @@
 # SEND provision profiles and secondary-school outcomes in ECHILD
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22710433.svg)](https://doi.org/10.5281/zenodo.22710433)
+
 R code for population-based analyses of recorded special educational needs and
 disabilities (SEND) provision profiles and education and health outcomes among
 secondary-school pupils in England using the ECHILD Research Database.
 
-> **Status:** analysis complete; version 1.0.0 prepared to support manuscript
-> submissions and reuse by other ECHILD researchers.
+> **Status:** analysis complete; version 1.0.0 released and archived on Zenodo.
 
 ## Project overview
 
@@ -165,5 +166,7 @@ validity of the code, methods or conclusions.
 ## Licence and citation
 
 Code is released under the MIT License. Citation metadata, including author
-ORCID and affiliation, are provided in `CITATION.cff`. Tagged releases are
-intended to be archived through Zenodo for persistent citation.
+ORCID and affiliation, are provided in `CITATION.cff`.
+
+Version 1.0.0 is permanently archived on Zenodo:
+https://doi.org/10.5281/zenodo.22710433
