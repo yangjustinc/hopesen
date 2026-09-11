@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: "ECHILD analysis of SEND provision and secondary-school outcomes"
-message: "If you use or adapt this analytical code, please cite this repository."
+message: "If you use or adapt this analytical code, please cite this software release."
 type: software
 authors:
   - family-names: Yang
@@ -10,6 +10,7 @@ authors:
     website: "https://www.justinyang.me/"
 version: 1.0.0
 date-released: 2026-09-11
+doi: "10.5281/zenodo.22710433"
 abstract: >-
   R code supporting population-based analyses of annually recorded special
   educational needs and disabilities (SEND) provision profiles and education
@@ -35,5 +36,5 @@ keywords:
   - epidemiology
   - R
 repository-code: "https://github.com/yangjustinc/hopesen"
-url: "https://www.justinyang.me/"
+url: "https://doi.org/10.5281/zenodo.22710433"
 license: MIT
