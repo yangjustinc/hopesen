@@ -4,6 +4,8 @@ All notable changes to the public analytical code are documented here.
 
 ## Unreleased
 
+## 1.0.0 - 2026-09-11
+
 ### Added
 
 - ECHILD-style public repository structure with explicit `_main.R` runner.
@@ -11,9 +13,9 @@ All notable changes to the public analytical code are documented here.
   education, absence, exclusions/AP, admitted patient care, chronic health,
   adversity-related injury, and stress-related presentations.
 - Functionalised fixed-effects Poisson modelling helpers.
-- Data-free R syntax checks on every push and pull request.
-- Synthetic QA tests for SEND classification and the locked model
-  specification.
+- Data-free R syntax parsing and synthetic QA tests on every push and pull
+  request.
+- Synthetic tests for SEND classification and the locked model specification.
 - Documentation for the analytical specification, SRS/air-gapped environment,
   analysis history, phenotype codelists, and quality-assurance approach.
 - `CITATION.cff` metadata for GitHub/Zenodo citation and archiving.
