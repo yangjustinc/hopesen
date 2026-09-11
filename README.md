@@ -74,7 +74,8 @@ The released workflow constructs and analyses:
 │   └── config.example.R            # copy to config.R inside the SRS
 ├── R/
 │   ├── 00_setup.R                  # packages, config and I/O helpers
-│   ├── 01_prepare_dataset.R        # source extraction + outcome construction
+│   ├── 01_prepare_dataset.R        # preparation-stage runner
+│   ├── preparation/                # source-specific cohort/outcome modules
 │   ├── 02_build_analysis_dataset.R # construct final pupil-year dataset
 │   ├── 03_descriptive_tables.R     # descriptive outputs
 │   ├── 04_regression_models.R      # final manuscript models

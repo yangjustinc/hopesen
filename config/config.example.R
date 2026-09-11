@@ -23,3 +23,10 @@ project_paths <- list(
   outputs = "outputs",
   geography = "geography"
 )
+
+# Release-specific source tables that do not follow the standard annual naming
+# patterns used elsewhere in the preparation code.
+source_tables <- list(
+  civil_reg_deaths = "<civil registration deaths table>",
+  alternative_provision = "<alternative provision census table>"
+)

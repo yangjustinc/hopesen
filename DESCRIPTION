@@ -28,6 +28,7 @@ Imports:
     odbc,
     officer,
     purrr,
+    readr,
     sf,
     spdep,
     stringr,
