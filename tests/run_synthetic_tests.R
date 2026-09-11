@@ -10,6 +10,10 @@ expect_error <- function(expr) {
   inherits(try(force(expr), silent = TRUE), "try-error")
 }
 
+compact_formula <- function(x) {
+  gsub("[[:space:]]+", "", paste(deparse(x), collapse = " "))
+}
+
 # SEND profile classification ---------------------------------------------
 synthetic_send <- data.frame(
   neurodivergent = c(0, 1, 0, 0, 0, 1, 1, 1, 0),
@@ -49,33 +53,33 @@ stopifnot(
 )
 
 # Locked model specification ----------------------------------------------
-binary_formula <- paste(deparse(model_formula("any_hosp")), collapse = " ")
+binary_formula <- compact_formula(model_formula("any_hosp"))
 required_terms <- c(
   "sen_indicator", "gender", "age_at_start_of_academic_year",
   "ethnic_group_major", "fsm_eligible", "language_group",
-  "i(idaci)", "chc_any", "year + code"
+  "i(idaci)", "chc_any"
 )
 stopifnot(all(vapply(
   required_terms,
   function(term) grepl(term, binary_formula, fixed = TRUE),
   logical(1)
 )))
-stopifnot(!grepl("offset", binary_formula, fixed = TRUE))
-
-absence_formula <- paste(
-  deparse(model_formula(
-    "overall_absence_6halfterms",
-    offset = "sessions_possible_6halfterms"
-  )),
-  collapse = " "
+stopifnot(
+  grepl("|year+code", binary_formula, fixed = TRUE),
+  !grepl("offset", binary_formula, fixed = TRUE)
 )
+
+absence_formula <- compact_formula(model_formula(
+  "overall_absence_6halfterms",
+  offset = "sessions_possible_6halfterms"
+))
 stopifnot(
   grepl(
     "offset(log(sessions_possible_6halfterms))",
     absence_formula,
     fixed = TRUE
   ),
-  grepl("| year + code", absence_formula, fixed = TRUE)
+  grepl("|year+code", absence_formula, fixed = TRUE)
 )
 
 stopifnot(
