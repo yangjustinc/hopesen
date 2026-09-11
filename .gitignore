@@ -1,0 +1,29 @@
+# Restricted / generated data
+/data/*
+!/data/.gitkeep
+/geography/*
+!/geography/.gitkeep
+
+# Analytical outputs
+/outputs/models/*
+/outputs/tables/*
+/outputs/figures/*
+/outputs/maps/*
+!/outputs/models/.gitkeep
+!/outputs/tables/.gitkeep
+!/outputs/figures/.gitkeep
+!/outputs/maps/.gitkeep
+
+# Local SRS configuration
+config/config.R
+
+# R / IDE state
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp

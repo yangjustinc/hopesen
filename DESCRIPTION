@@ -1,0 +1,36 @@
+Package: echild.send.secondary.outcomes
+Type: Project
+Title: SEND Provision Profiles and Secondary-School Outcomes in ECHILD
+Version: 0.1.0
+Authors@R: person("Justin C", "Yang", role = c("aut", "cre"))
+Description: Reproducible R analysis code for population-based analyses of
+    recorded SEND provision profiles and education and health outcomes among
+    secondary-school pupils in England using the ECHILD Research Database.
+License: MIT
+Encoding: UTF-8
+Imports:
+    arrow,
+    cowplot,
+    data.table,
+    DBI,
+    dbplyr,
+    dplyr,
+    fixest,
+    flextable,
+    future,
+    future.apply,
+    ggplot2,
+    Hmisc,
+    janitor,
+    labelled,
+    lubridate,
+    modelsummary,
+    odbc,
+    officer,
+    purrr,
+    sf,
+    spdep,
+    stringr,
+    table1,
+    tidyr,
+    tmap

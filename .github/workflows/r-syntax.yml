@@ -1,0 +1,43 @@
+name: R syntax check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  parse-r-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Parse R files
+        shell: Rscript {0}
+        run: |
+          files <- list.files(
+            path = ".",
+            pattern = "\\.[Rr]$",
+            recursive = TRUE,
+            full.names = TRUE
+          )
+
+          failures <- character()
+          for (file in files) {
+            message("Parsing ", file)
+            tryCatch(
+              parse(file = file),
+              error = function(e) {
+                failures <<- c(failures, paste0(file, ": ", conditionMessage(e)))
+              }
+            )
+          }
+
+          if (length(failures)) {
+            stop(paste(failures, collapse = "\n"), call. = FALSE)
+          }

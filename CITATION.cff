@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "ECHILD analysis of SEND provision and secondary-school outcomes"
+message: "If you use or adapt this analytical code, please cite this repository."
+type: software
+authors:
+  - family-names: Yang
+    given-names: Justin C
+version: 0.1.0
+date-released: 2026-09-11
+abstract: >-
+  R code for population-based analyses of recorded special educational needs
+  and disabilities provision profiles and education and health outcomes among
+  secondary-school pupils in England using the ECHILD Research Database.
+license: MIT
