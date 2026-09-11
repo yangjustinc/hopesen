@@ -5,10 +5,35 @@ type: software
 authors:
   - family-names: Yang
     given-names: Justin C
+    orcid: "https://orcid.org/0000-0003-2881-4906"
+    affiliation: "Division of Psychiatry, University College London"
+    website: "https://www.justinyang.me/"
 version: 0.1.0
 date-released: 2026-09-11
 abstract: >-
-  R code for population-based analyses of recorded special educational needs
-  and disabilities provision profiles and education and health outcomes among
-  secondary-school pupils in England using the ECHILD Research Database.
+  R code supporting population-based analyses of annually recorded special
+  educational needs and disabilities (SEND) provision profiles and education
+  and health outcomes among secondary-school pupils in England using the ECHILD
+  Research Database. The repository provides a cleaned, documented and
+  pedagogical implementation of the completed analysis, including linked-data
+  cohort construction, outcome derivation, descriptive analyses and
+  fixed-effects Poisson regression workflows designed for use within the ONS
+  Secure Research Service.
+keywords:
+  - ECHILD
+  - special educational needs and disabilities
+  - SEND
+  - administrative data
+  - linked data
+  - education
+  - school absence
+  - school exclusion
+  - alternative provision
+  - hospitalisation
+  - self-harm
+  - suicide
+  - epidemiology
+  - R
+repository-code: "https://github.com/yangjustinc/hopesen"
+url: "https://www.justinyang.me/"
 license: MIT
