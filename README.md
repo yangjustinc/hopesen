@@ -4,7 +4,7 @@ R code for population-based analyses of recorded special educational needs and
 disabilities (SEND) provision profiles and education and health outcomes among
 secondary-school pupils in England using the ECHILD Research Database.
 
-> **Status:** analysis complete; public code prepared to support manuscript
+> **Status:** analysis complete; version 1.0.0 prepared to support manuscript
 > submissions and reuse by other ECHILD researchers.
 
 ## Project overview
@@ -66,7 +66,7 @@ The released workflow constructs and analyses:
 
 ```text
 .
-├── .github/workflows/r-syntax.yml # data-free R syntax check
+├── .github/workflows/r-syntax.yml  # syntax parsing + synthetic QA
 ├── _main.R                         # explicit analysis runner
 ├── codelists/
 │   └── README.md                   # required public phenotype definitions
@@ -82,13 +82,19 @@ The released workflow constructs and analyses:
 │   ├── 05_figures.R                # descriptive figures
 │   ├── 06_send_change.R            # optional SEND-change analysis
 │   ├── 07_spatial_analysis.R       # optional spatial analyses
-│   └── functions_models.R          # reusable modelling helpers
+│   ├── functions_models.R          # reusable modelling helpers
+│   └── functions_send.R            # testable SEND classification helper
+├── tests/
+│   └── run_synthetic_tests.R       # data-free risk-based QA
 ├── docs/
-│   ├── ANALYSIS_SPECIFICATION.md    # concise analytical map
+│   ├── ANALYSIS_SPECIFICATION.md   # concise analytical map
+│   ├── QUALITY_ASSURANCE.md        # public/SRS QA boundary
 │   └── SRS_ENVIRONMENT.md          # air-gap and reproducibility notes
 ├── ANALYSIS_HISTORY.md
-├── DESCRIPTION                     # dependency manifest
+├── CHANGELOG.md
 ├── CITATION.cff
+├── DESCRIPTION                     # dependency and project metadata
+├── hopesen.Rproj
 └── LICENSE
 ```
 
@@ -124,6 +130,19 @@ See `docs/ANALYSIS_SPECIFICATION.md` for a concise analytical map and
 `ANALYSIS_HISTORY.md` for the distinction between the final specification and
 superseded exploratory modelling.
 
+## Quality assurance
+
+The repository uses a dependency-light GitHub Actions workflow to parse all R
+files and run synthetic, data-free checks of the highest-risk reusable logic.
+These tests cover the nine SEND profiles and the locked manuscript model
+specification without exposing or simulating record-level ECHILD data.
+
+Full end-to-end validation against database schemas, linked records, model
+sample sizes and disclosure-controlled outputs necessarily remains within the
+SRS. See `docs/QUALITY_ASSURANCE.md` for the public/SRS QA boundary and the
+proportionate approach informed by the UK Government Analysis Function's
+Quality Assurance of Code guidance.
+
 ## Reuse
 
 The code is intended to be useful beyond the accompanying manuscripts. In
@@ -145,5 +164,6 @@ validity of the code, methods or conclusions.
 
 ## Licence and citation
 
-Code is released under the MIT License. Citation metadata are provided in
-`CITATION.cff`.
+Code is released under the MIT License. Citation metadata, including author
+ORCID and affiliation, are provided in `CITATION.cff`. Tagged releases are
+intended to be archived through Zenodo for persistent citation.
