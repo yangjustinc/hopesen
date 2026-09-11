@@ -9,12 +9,13 @@ end-to-end testing are neither possible nor appropriate.
 
 ## What is automated publicly
 
-Two GitHub Actions workflows run on every push and pull request:
+A single dependency-light GitHub Actions quality-assurance workflow runs on
+every push and pull request and performs two checks:
 
-1. **R syntax check** parses every `.R` file in the repository. This catches
+1. **R syntax parsing** parses every `.R` file in the repository. This catches
    syntax errors without requiring restricted data or SRS-only dependencies.
 2. **R synthetic tests** exercise high-risk reusable logic using entirely
-   synthetic inputs. Current tests cover:
+   synthetic inputs and base R. Current tests cover:
    - assignment of the nine mutually exclusive SEND profiles, including
      residual multi-domain combinations and invalid input handling;
    - the locked fixed-effects Poisson model formula and adjustment set;
@@ -70,7 +71,7 @@ proportionate to analytical risk.
 
 Before a tagged release, the intended checks are:
 
-- both GitHub Actions workflows pass on the release commit;
+- the GitHub Actions quality-assurance workflow passes on the release commit;
 - `CITATION.cff`, `DESCRIPTION`, and release version agree;
 - no `config/config.R`, restricted data, analytical output, credentials, or SRS
   connection details are tracked;
